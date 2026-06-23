@@ -9,7 +9,7 @@ public class BooleanExpressionTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/theme_2_1/BooleanExpression/data.csv")
     void testCsv(boolean a, boolean b, boolean c, boolean d, boolean expected) {
-        boolean actual = BooleanExpression.booleanExpression(a, b, c, d);
+        var actual = BooleanExpression.booleanExpression(a, b, c, d);
         Assertions.assertEquals(expected, actual);
     }
 }

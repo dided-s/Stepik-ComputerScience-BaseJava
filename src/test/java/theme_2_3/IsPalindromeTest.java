@@ -17,7 +17,6 @@ public class IsPalindromeTest {
     @MethodSource("arguments")
     void testPath(String text, boolean expected) {
         var actual = IsPalindrome.isPalindrome(text);
-        System.out.println(text);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -27,7 +26,7 @@ public class IsPalindromeTest {
                     Path inputPath = Path.of(arguments.get()[0].toString());
                     Path outputPath = Path.of(arguments.get()[1].toString());
                     try {
-                        return Arguments.of(Files.lines(inputPath), Files.lines(outputPath));
+                        return Arguments.of(Files.readString(inputPath), Files.readString(outputPath));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

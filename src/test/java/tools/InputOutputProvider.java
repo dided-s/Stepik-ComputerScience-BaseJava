@@ -18,15 +18,10 @@ public class InputOutputProvider {
     }
 
     public static Stream<Arguments> pathArguments(String themeName, String taskName) {
-        Path themePath = null;
-        try {
-            themePath = Path.of(ClassLoader.getSystemClassLoader().getResource(themeName).toURI());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        Path taskPath = getTaskThemePath(themeName, taskName);
 
-        Path inputsPath = themePath.resolve(taskName).resolve("inputs");
-        Path outputsPath = themePath.resolve(taskName).resolve("outputs");
+        Path inputsPath = taskPath.resolve("inputs");
+        Path outputsPath = taskPath.resolve("outputs");
 
         try {
             return Files.walk(inputsPath)
@@ -36,6 +31,15 @@ public class InputOutputProvider {
                         return Arguments.of(input, output);
                     });
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Path getTaskThemePath(String themeName, String taskName) {
+        try {
+            Path themePath = Path.of(ClassLoader.getSystemClassLoader().getResource(themeName).toURI());
+            return themePath.resolve(taskName);
+        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }

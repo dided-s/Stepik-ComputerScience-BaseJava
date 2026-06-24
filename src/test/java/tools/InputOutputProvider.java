@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class InputOutputProvider {
 
-    public static void main(String[] args) throws URISyntaxException, IOException {
+    public static void main(String[] args) {
         pathArguments("theme_2_1", "BooleanExpression")
                 .forEach(arguments ->
                         System.out.println(Arrays.toString(arguments.get())));

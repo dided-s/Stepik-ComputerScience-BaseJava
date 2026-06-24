@@ -12,6 +12,6 @@ public class IsPalindrome {
         String regexPattern = "[^a-zA-Z0-9]";
         text = text.replaceAll(regexPattern, "").toLowerCase();
 
-        return text.equals(new StringBuilder(text).reverse().toString());
+        return text.contentEquals(new StringBuilder(text).reverse());
     }
 }

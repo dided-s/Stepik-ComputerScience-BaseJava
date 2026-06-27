@@ -14,6 +14,12 @@ https://stepik.org/course/187/info
 | 2.4 Управляющие конструкции: условные операторы и циклы | [Factorial](src/main/java/theme_2_4/Factorial.java)                 | [FactorialTest](src/test/java/theme_2_4/FactorialTest.java)                 | [data.csv](src/test/resources/theme_2_4/Factorial/data.csv)         |                                                                         |
 | 2.4 Управляющие конструкции: условные операторы и циклы | [MergeArrays](src/main/java/theme_2_4/MergeArrays.java)             | [MergeArraysTest](src/test/java/theme_2_4/MergeArraysTest.java)             | [inputs/outputs](src/test/resources/theme_2_4/MergeArrays)          |                                                                         |
 | 2.4 Управляющие конструкции: условные операторы и циклы | [PrintTextPerRole](src/main/java/theme_2_4/PrintTextPerRole.java)   | [PrintTextPerRoleTest](src/test/java/theme_2_4/PrintTextPerRoleTest.java)   | [inputs/outputs](src/test/resources/theme_2_4/PrintTextPerRole)     | [Пояснение](src/test/resources/theme_2_4/PrintTextPerRole/Пояснение.md) |
+| 3.3 Объявление класс                                    | [MoveRobot](src/main/java/theme_3_3/MoveRobot.java)                 | [MoveRobotTest](src/test/java/theme_3_3/MoveRobotTest.java)                 | [inputs/outputs](src/test/resources/theme_3_3/MoveRobot)            |                                                                         |
+| 3.4 Наследование. Класс Object                          | [ComplexNumber](src/main/java/theme_3_4/ComplexNumber.java)         | [ComplexNumberTest](src/test/java/theme_3_4/ComplexNumberTest.java)         | [data.csv](src/test/resources/theme_3_4/ComplexNumber/data.csv)     |                                                                         |
+
+
+
+
 
 
 

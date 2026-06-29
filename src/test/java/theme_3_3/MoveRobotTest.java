@@ -14,8 +14,8 @@ public class MoveRobotTest {
         MoveRobot.moveRobot(robot, x, y);
 
         Assertions.assertAll(
-                () -> Assertions.assertEquals(x, robot.getX()),
-                () -> Assertions.assertEquals(y, robot.getY())
+                () -> Assertions.assertEquals(x, robot.getX(), "Не совпадает координата по оси X"),
+                () -> Assertions.assertEquals(y, robot.getY(), "Не совпадает координата по оси Y")
         );
     }
 }

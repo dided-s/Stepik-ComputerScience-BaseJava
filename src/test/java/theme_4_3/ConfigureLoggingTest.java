@@ -6,8 +6,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tools.Utils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,18 +16,12 @@ public class ConfigureLoggingTest {
     @ParameterizedTest
     @MethodSource("argumentsExist")
     void testArgumentsExist(Logger logger, Level level, String message) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream oldOut = System.err;
+        String captured = Utils.executeAndGetSystemErrAsString(
+                () -> {
+                    ConfigureLogging.configureLogging();
+                    logger.log(level, message);
+                });
 
-        try {
-            System.setErr(new PrintStream(baos));
-            ConfigureLogging.configureLogging();
-            logger.log(level, message);
-        } finally {
-            System.setErr(oldOut);
-        }
-
-        String captured = baos.toString();
         System.out.println(captured);
 
         int count = Utils.textNonCrossedContainsCount(captured, message);
@@ -64,18 +56,12 @@ public class ConfigureLoggingTest {
     @ParameterizedTest
     @MethodSource("argumentsNotExist")
     void testArgumentsNotExist(Logger logger, Level level, String message) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream oldOut = System.err;
+        String captured = Utils.executeAndGetSystemErrAsString(
+                () -> {
+                    ConfigureLogging.configureLogging();
+                    logger.log(level, message);
+                });
 
-        try {
-            System.setErr(new PrintStream(baos));
-            ConfigureLogging.configureLogging();
-            logger.log(level, message);
-        } finally {
-            System.setErr(oldOut);
-        }
-
-        String captured = baos.toString();
         System.out.println(captured);
 
         int count = Utils.textNonCrossedContainsCount(captured, message);

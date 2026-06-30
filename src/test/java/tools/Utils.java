@@ -1,5 +1,7 @@
 package tools;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.Arrays;
 
 public class Utils {
@@ -30,5 +32,19 @@ public class Utils {
         }
 
         return count;
+    }
+
+    public static String executeAndGetSystemErrAsString(Runnable runnable) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream oldOut = System.err;
+
+        try {
+            System.setErr(new PrintStream(baos));
+            runnable.run();
+        } finally {
+            System.setErr(oldOut);
+        }
+
+        return baos.toString();
     }
 }

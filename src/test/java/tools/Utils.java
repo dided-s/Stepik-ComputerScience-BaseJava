@@ -14,4 +14,21 @@ public class Utils {
     public static int[] parseIntArray(String text) {
         return parseIntArray(text, ",");
     }
+
+    /**
+     * Посчитать количество вхождений подстроки в строку. (Не пересекающиеся вхождения)
+     */
+    public static int textNonCrossedContainsCount(String text, String sub) {
+        if (text == null || sub == null || sub.isEmpty()) return 0;
+
+        int count = 0;
+        int from = 0;
+
+        while ((from = text.indexOf(sub, from)) != -1) {
+            count++;
+            from += sub.length();
+        }
+
+        return count;
+    }
 }

@@ -1,4 +1,4 @@
-# Решение задач для Java. Базовый курс
+# Stepik. Решение задач для курса: Java. Базовый курс
 
 https://stepik.org/course/187/info
 
@@ -23,6 +23,7 @@ https://stepik.org/course/187/info
 | 4.2 Обработка исключений. Try-catch                     | [MoveRobot](src/main/java/theme_4_2/MoveRobot.java)                                     | [MoveRobotTest](src/test/java/theme_4_2/MoveRobotTest.java)                                     | В тестовом классе                                                   |                                                                         |
 | 4.3 Логирование                                         | [ConfigureLogging](src/main/java/theme_4_3/ConfigureLogging.java)                       | [ConfigureLoggingTest](src/test/java/theme_4_3/ConfigureLoggingTest.java)                       | В тестовом классе                                                   |                                                                         |
 | 4.3 Логирование                                         | [MailServices](src/main/java/theme_4_3/MailServices.java)                               | [MailServicesTest](src/test/java/theme_4_3/MailServicesTest.java)                               | В тестовом классе                                                   |                                                                         |
+| 5.2 Потоки байт                                         | [CheckSumOfStream](src/main/java/theme_5_2/CheckSumOfStream.java)                       | [CheckSumOfStreamTest](src/test/java/theme_5_2/CheckSumOfStreamTest.java)                       | В тестовом классе                                                   |                                                                         |
 
 
 
